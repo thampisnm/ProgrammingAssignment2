@@ -29,4 +29,31 @@ cacheSolve <- function(x, ...) {
                 return(m)
 }
         
+## Solution of the above r Code
+
+a<- c(1,5,4,3,2,4,3,1,2)
+ mat<-matrix(a,3)
+ mat
+
+      [,1] [,2] [,3]
+[1,]    1    3    3
+[2,]    5    2    1
+[3,]    4    4    2
+
+ mat_inv<- makeCacheMatrix(mat)
+ Cache_mat<-cacheSolve(mat_inv)
+ Cache_mat
+
+[,1]       [,2]       [,3]
+[1,]  1.423557e-17  0.3333333 -0.1666667
+[2,] -3.333333e-01 -0.5555556  0.7777778
+[3,]  6.666667e-01  0.4444444 -0.7222222
+
+cacheSolve(mat_inv)
+Retrieving Cached Matrix
+
+          [,1]       [,2]       [,3]
+[1,]  1.423557e-17  0.3333333 -0.1666667
+[2,] -3.333333e-01 -0.5555556  0.7777778
+[3,]  6.666667e-01  0.4444444 -0.7222222
         
